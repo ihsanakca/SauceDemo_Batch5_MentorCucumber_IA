@@ -8,12 +8,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 public class ProductsPage extends BasePage{
+   static int count=0;
 
     @FindBy(css = ".product_sort_container")
     public WebElement sortItemDropDown;
 
     @FindBy(xpath = "(//div[@class='inventory_item_name '])[1]")
     public WebElement firstItem;
+
 
 
 
@@ -28,5 +30,6 @@ public class ProductsPage extends BasePage{
     public void addItem(String itemName){
         Driver.get().findElement(By
                 .xpath("//div[text()='"+itemName+"']/ancestor::*[@*='inventory_item_description']//button")).click();
+        count++;
     }
 }
