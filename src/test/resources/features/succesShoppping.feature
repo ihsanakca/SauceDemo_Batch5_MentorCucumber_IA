@@ -24,3 +24,7 @@ Feature: Success Shopping E2E Test
     When The user fills the form with : "Selim", "Gezer" and "35920"
     When The user navigate to page with related button : "continue"
     Then The user should be able to see page title : "Checkout: Overview"
+    Then The user should be able to verify number of items on the bill
+    And  The user navigate to page with related button : "finish"
+    Then The user should be able to see page title : "Checkout: Complete!"
+    And The user should take success shopping message: "Thank you for your order!"
