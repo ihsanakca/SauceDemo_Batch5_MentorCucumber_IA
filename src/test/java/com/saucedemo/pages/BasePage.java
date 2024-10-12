@@ -1,5 +1,6 @@
 package com.saucedemo.pages;
 
+import com.saucedemo.utilities.BrowserUtils;
 import com.saucedemo.utilities.Driver;
 import io.cucumber.java.sl.In;
 import org.junit.Assert;
@@ -27,6 +28,7 @@ public abstract class BasePage {
     public void verifyBasketQuantity(){
         String actualQuantity = basketQuantity.getText();
         int expectedQuantity = ProductsPage.count;
+        BrowserUtils.waitFor(2);
         Assert.assertEquals(expectedQuantity,Integer.parseInt(actualQuantity));
     }
 

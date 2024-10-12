@@ -1,6 +1,7 @@
 package com.saucedemo.stepDefs;
 
 import com.saucedemo.pages.ProductsPage;
+import com.saucedemo.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -20,6 +21,7 @@ public class ProductsStepDefs {
     @Then("The user verifies the correct sort with first item name : {string}")
     public void the_user_verifies_the_correct_sort_with_first_item_name(String expectedFirstItem) {
         String actualFirstItem = productsPage.getFirstItemText();
+        BrowserUtils.waitFor(2);
         Assert.assertEquals(expectedFirstItem,actualFirstItem);
     }
     @When("The user should be able to add item with item name : {string}")

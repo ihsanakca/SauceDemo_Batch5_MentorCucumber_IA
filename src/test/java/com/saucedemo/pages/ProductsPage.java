@@ -1,5 +1,6 @@
 package com.saucedemo.pages;
 
+import com.saucedemo.utilities.BrowserUtils;
 import com.saucedemo.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,8 +21,10 @@ public class ProductsPage extends BasePage{
 
 
     public void orderItem(String orderType){
+        BrowserUtils.waitFor(2);
         Select select=new Select(sortItemDropDown);
         select.selectByVisibleText(orderType);
+        BrowserUtils.waitFor(2);
     }
 
     public String getFirstItemText(){
@@ -30,6 +33,7 @@ public class ProductsPage extends BasePage{
     public void addItem(String itemName){
         Driver.get().findElement(By
                 .xpath("//div[text()='"+itemName+"']/ancestor::*[@*='inventory_item_description']//button")).click();
+        BrowserUtils.waitFor(2);
         count++;
     }
 }

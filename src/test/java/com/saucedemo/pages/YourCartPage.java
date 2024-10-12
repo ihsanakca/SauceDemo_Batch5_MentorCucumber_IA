@@ -19,6 +19,7 @@ public class YourCartPage extends BasePage{
     }
 
     public void clickButton(String buttonName){
+        BrowserUtils.waitFor(2);
         Driver.get().findElement(By.name(buttonName)).click();
     }
 }
